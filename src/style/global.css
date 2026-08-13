@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+p{
+    font-size: 24px;
+}
+
+.caixa{
+    margin: 0 auto;
+    width: 57.67%;
+}
+
+img{
+    width: 50px;
+}
+
+header{
+    text-align: left;
+    background-color: #733d26;
+    color: #fff;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+header .caixa{
+    width: 80%;
+}
+
+body{
+    background-color: #faf9f6;
+}
+
+h3{
+    font-size: 28px;
+}
+
+h4{
+    font-size: 24px;
+}
+
+small{
+    font-size: 16px;
+}
