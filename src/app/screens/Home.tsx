@@ -1,6 +1,4 @@
 import { Link } from 'react-router';
-import { StatCard } from '../components/StatCard';
-import { ActionCard } from '../components/ActionCard';
 import { storage } from '../utils/storage';
 import { ShirtIcon, Sparkles, TrendingUp, Heart, Calendar } from 'lucide-react';
 import { useMemo } from 'react';
@@ -12,6 +10,7 @@ export function Home() {
 
   const stats = useMemo(() => {
     const favoriteItems = items.filter(item => item.isFavorite).length;
+    const favoriteLooks = looks.filter(look => look.isFavorite).length;
     const recentItems = items.filter(item => {
       const daysSinceAdded = (Date.now() - new Date(item.createdAt).getTime()) / (1000 * 60 * 60 * 24);
       return daysSinceAdded <= 7;
@@ -28,6 +27,7 @@ export function Home() {
       totalItems: items.length,
       totalLooks: looks.length,
       favoriteItems,
+      favoriteLooks,
       recentItems,
       topCategory: topCategory ? `${topCategory[0]} (${topCategory[1]})` : 'Nenhuma',
     };
@@ -43,49 +43,95 @@ export function Home() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <StatCard
-          value={stats.totalItems}
-          title="Total de Peças"
-          icon={<ShirtIcon className="text-[#733D26]" size={24} aria-hidden="true" />}
-          link="/app/closet"
-          linkText="Ver Guarda-Roupa →"
-        />
-        <StatCard
-          value={stats.totalLooks}
-          title="Looks Salvos"
-          icon={<Sparkles className="text-[#733D26]" size={24} aria-hidden="true" />}
-          link="/app/looks"
-          linkText="Ver Looks →"
-        />
-        <StatCard
-          value={stats.favoriteItems}
-          title="Peças Favoritas"
-          icon={<Heart className="text-[#733D26]" size={24} aria-hidden="true" />}
-        />
-        <StatCard
-          value={stats.recentItems}
-          title="Adicionado Esta Semana"
-          icon={<Calendar className="text-[#733D26]" size={24} aria-hidden="true" />}
-        />
-        <StatCard
-          value={stats.topCategory}
-          title="Categoria Principal"
-          icon={<TrendingUp className="text-[#733D26]" size={24} aria-hidden="true" />}
-        />
+        <div className="bg-white border border-pink-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="bg-[#FDE8EC] p-3 rounded-lg">
+              <ShirtIcon className="text-[#733D26]" size={24} aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-[#733D26]">{stats.totalItems}</p>
+              <p className="text-sm text-gray-500">Total de Peças</p>
+            </div>
+          </div>
+          <Link
+            to="/app/closet"
+            className="text-[#733D26] hover:text-[#FFB6C1] text-sm font-medium inline-flex items-center min-h-[44px]"
+          >
+            Ver Guarda-Roupa →
+          </Link>
+        </div>
+
+        <div className="bg-white border border-pink-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="bg-[#FDE8EC] p-3 rounded-lg">
+              <Sparkles className="text-[#733D26]" size={24} aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-[#733D26]">{stats.totalLooks}</p>
+              <p className="text-sm text-gray-500">Looks Salvos</p>
+            </div>
+          </div>
+          <Link
+            to="/app/looks"
+            className="text-[#733D26] hover:text-[#FFB6C1] text-sm font-medium inline-flex items-center min-h-[44px]"
+          >
+            Ver Looks →
+          </Link>
+        </div>
+
+        <div className="bg-white border border-pink-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="bg-[#FDE8EC] p-3 rounded-lg">
+              <Heart className="text-[#733D26]" size={24} aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-[#733D26]">{stats.favoriteItems}</p>
+              <p className="text-sm text-gray-500">Peças Favoritas</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white border border-pink-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="bg-[#FDE8EC] p-3 rounded-lg">
+              <Calendar className="text-[#733D26]" size={24} aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-[#733D26]">{stats.recentItems}</p>
+              <p className="text-sm text-gray-500">Adicionado Esta Semana</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white border border-pink-100 rounded-lg p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="bg-[#FDE8EC] p-3 rounded-lg">
+              <TrendingUp className="text-[#733D26]" size={24} aria-hidden="true" />
+            </div>
+            <div>
+              <p className="text-lg font-bold text-[#733D26]">{stats.topCategory}</p>
+              <p className="text-sm text-gray-500">Categoria Principal</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <ActionCard
-          title="Adicionar Nova Peça"
-          description="Cadastre uma nova peça no seu guarda-roupa"
-          link="/app/add-item"
-          filled
-        />
-        <ActionCard
-          title="Criar Look"
-          description="Combine suas peças para criar novos outfits"
-          link="/app/look-builder"
-        />
+        <Link
+          to="/app/add-item"
+          className="bg-[#733D26] text-white rounded-lg p-8 hover:bg-[#8B4A30] transition-colors block"
+        >
+          <h2 className="text-xl font-bold mb-2">Adicionar Nova Peça</h2>
+          <p className="text-gray-300">Cadastre uma nova peça no seu guarda-roupa</p>
+        </Link>
+
+        <Link
+          to="/app/look-builder"
+          className="bg-white border-2 border-[#FFB6C1] text-[#733D26] rounded-lg p-8 hover:bg-[#FDE8EC] transition-colors block"
+        >
+          <h2 className="text-xl font-bold mb-2">Criar Look</h2>
+          <p className="text-gray-500">Combine suas peças para criar novos outfits</p>
+        </Link>
       </div>
 
       <div className="bg-[#FDE8EC] border border-[#FFB6C1] rounded-lg p-6">

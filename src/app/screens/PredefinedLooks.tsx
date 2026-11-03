@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { storage } from '../utils/storage';
-import { Search, Sparkles } from 'lucide-react';
+import { Search } from 'lucide-react';
+import { LookCard } from '../components/LookCard';
 
 const PREDEFINED_LOOKS = [
   {
@@ -132,61 +133,7 @@ export function PredefinedLooks() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredLooks.map(look => {
           const availability = checkAvailability(look.requiredCategories);
-          return (
-            <article
-              key={look.id}
-              className="bg-white border border-pink-100 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
-            >
-              <div className="bg-gradient-to-br from-[#FDE8EC] to-[#FFB6C1]/40 p-8 flex items-center justify-center aspect-video">
-                <Sparkles className="text-[#FFB6C1]" size={48} aria-hidden="true" />
-              </div>
-
-              <div className="p-6">
-                <div className="mb-4">
-                  <h2 className="text-xl font-semibold text-[#733D26] mb-1">{look.name}</h2>
-                  <span className="inline-block bg-[#FDE8EC] text-[#733D26] text-xs px-3 py-1 rounded-full">
-                    {look.occasion}
-                  </span>
-                </div>
-
-                <p className="text-sm text-gray-500 mb-4">{look.description}</p>
-
-                <div className="mb-4">
-                  <h3 className="text-sm font-medium text-[#733D26] mb-2">Itens Necessários:</h3>
-                  <ul className="space-y-1">
-                    {look.requiredCategories.map(cat => {
-                      const available = availability.available.includes(cat);
-                      return (
-                        <li
-                          key={cat}
-                          className={`text-sm flex items-center gap-2 ${
-                            available ? 'text-green-600' : 'text-red-500'
-                          }`}
-                        >
-                          <span>{available ? '✓' : '✗'}</span>
-                          {cat}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-
-                {availability.canCreate ? (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                    <p className="text-green-800 text-sm font-medium">
-                      ✓ Você pode criar este look!
-                    </p>
-                  </div>
-                ) : (
-                  <div className="bg-[#FDE8EC] border border-[#FFB6C1] rounded-lg p-3">
-                    <p className="text-[#733D26] text-sm">
-                      <strong>Faltando:</strong> {availability.missing.join(', ')}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </article>
-          );
+          return <LookCard key={look.id} look={look} availability={availability} />;
         })}
       </div>
 

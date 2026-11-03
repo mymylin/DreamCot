@@ -1,0 +1,205 @@
+/* ─── DARK MODE (rose-tinted palette) ───────────────────────────────────────── */
+
+html.dark-mode {
+  color-scheme: dark;
+}
+
+/* Main backgrounds */
+html.dark-mode .bg-\[\#FAF9F6\]        { background-color: #1e1520 !important; }
+html.dark-mode .bg-\[\#F8B0CB\]        { background-color: #1e1520 !important; }
+html.dark-mode .bg-white               { background-color: #2a1a24 !important; }
+html.dark-mode .bg-\[\#FDE8EC\]        { background-color: #3a1f30 !important; }
+html.dark-mode .bg-\[\#FFB6C1\]        { background-color: #5c2a40 !important; }
+html.dark-mode .bg-\[\#733D26\]        { background-color: #7a3040 !important; }
+html.dark-mode .min-h-screen           { background-color: #1e1520; }
+
+/* Text */
+html.dark-mode .text-\[\#733D26\]      { color: #f0a0b8 !important; }
+html.dark-mode .text-\[\#FFB6C1\]      { color: #e080a0 !important; }
+html.dark-mode .text-gray-300          { color: #d8b0c0 !important; }
+html.dark-mode .text-gray-400          { color: #a08090 !important; }
+html.dark-mode .text-gray-500          { color: #a88898 !important; }
+html.dark-mode .text-gray-600          { color: #b898a8 !important; }
+html.dark-mode .text-gray-700          { color: #d0b0c0 !important; }
+html.dark-mode .text-white             { color: #fce8f0 !important; }
+
+/* Borders */
+html.dark-mode .border-pink-100        { border-color: #4a2535 !important; }
+html.dark-mode .border-\[\#FFB6C1\]   { border-color: #5c2a40 !important; }
+html.dark-mode .border-gray-200        { border-color: #4a2535 !important; }
+html.dark-mode .border-gray-300        { border-color: #4a2535 !important; }
+html.dark-mode .border-pink-200        { border-color: #4a2535 !important; }
+
+/* Hover */
+html.dark-mode .hover\:bg-pink-50:hover          { background-color: #3a1f30 !important; }
+html.dark-mode .hover\:bg-\[\#FDE8EC\]:hover     { background-color: #3a1f30 !important; }
+html.dark-mode .hover\:bg-\[\#8B4A30\]:hover     { background-color: #8d3a4d !important; }
+html.dark-mode .hover\:bg-white:hover            { background-color: #3d2035 !important; }
+html.dark-mode .hover\:bg-\[\#FAF9F6\]:hover     { background-color: #3a1f30 !important; }
+html.dark-mode .hover\:text-\[\#733D26\]:hover   { color: #f0a0b8 !important; }
+html.dark-mode .hover\:text-\[\#FFB6C1\]:hover   { color: #e080a0 !important; }
+
+/* Active nav item */
+html.dark-mode .bg-\[\#FFB6C1\]                  { background-color: #5c2a40 !important; }
+
+/* Inputs */
+html.dark-mode input:not([type="color"]):not([type="file"]):not([type="checkbox"]):not([type="range"]),
+html.dark-mode select,
+html.dark-mode textarea {
+  background-color: #3a1f30 !important;
+  color: #fce8f0 !important;
+  border-color: #5c2a40 !important;
+}
+html.dark-mode input::placeholder  { color: #7a5060 !important; }
+html.dark-mode select option        { background-color: #3a1f30; color: #fce8f0; }
+
+/* Auth bg override */
+html.dark-mode .min-h-screen.bg-\[\#F8B0CB\],
+html.dark-mode .min-h-screen.bg-\[\#FAF9F6\] {
+  background-color: #1e1520 !important;
+}
+
+/* Gradient override */
+html.dark-mode .from-\[\#FDE8EC\]     { --tw-gradient-from: #3a1f30 !important; }
+html.dark-mode .to-\[\#FFB6C1\]\/40   { --tw-gradient-to: rgba(92,42,64,0.4) !important; }
+
+/* Shadows */
+html.dark-mode .hover\:shadow-lg:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6) !important;
+}
+
+/* Red/error states */
+html.dark-mode .bg-red-50            { background-color: #3a1520 !important; }
+html.dark-mode .border-red-200       { border-color: #6a2535 !important; }
+html.dark-mode .text-red-800         { color: #f09090 !important; }
+html.dark-mode .text-red-900         { color: #f4a0a0 !important; }
+html.dark-mode .hover\:bg-red-50:hover { background-color: #3a1520 !important; }
+
+/* Green states */
+html.dark-mode .bg-green-50          { background-color: #0f2e1a !important; }
+html.dark-mode .border-green-200     { border-color: #1f5a34 !important; }
+html.dark-mode .text-green-800       { color: #70d090 !important; }
+html.dark-mode .text-green-900       { color: #80e0a0 !important; }
+html.dark-mode .text-green-600       { color: #60c080 !important; }
+
+/* Orange states */
+html.dark-mode .bg-orange-50         { background-color: #2e1f0a !important; }
+html.dark-mode .border-orange-200    { border-color: #5a3a18 !important; }
+html.dark-mode .text-orange-900      { color: #f0b060 !important; }
+html.dark-mode .text-orange-600      { color: #e8a050 !important; }
+
+/* ─── PROTANOPIA (dificuldade com vermelho → paleta violeta/índigo) ───────────── */
+
+html.protanopia .bg-\[\#F8B0CB\]      { background-color: #e0e7ff !important; }
+html.protanopia .bg-\[\#FFB6C1\]      { background-color: #a5b4fc !important; }
+html.protanopia .bg-\[\#FDE8EC\]      { background-color: #e0e7ff !important; }
+html.protanopia .bg-\[\#733D26\]      { background-color: #3730a3 !important; }
+
+html.protanopia .text-\[\#733D26\]    { color: #3730a3 !important; }
+html.protanopia .text-\[\#FFB6C1\]    { color: #6366f1 !important; }
+
+html.protanopia .border-\[\#FFB6C1\]  { border-color: #a5b4fc !important; }
+html.protanopia .border-pink-100      { border-color: #c7d2fe !important; }
+html.protanopia .border-pink-200      { border-color: #a5b4fc !important; }
+
+html.protanopia .fill-\[\#FFB6C1\]    { fill: #a5b4fc !important; }
+
+html.protanopia .hover\:bg-pink-50:hover        { background-color: #eef2ff !important; }
+html.protanopia .hover\:bg-\[\#FDE8EC\]:hover   { background-color: #e0e7ff !important; }
+html.protanopia .hover\:bg-\[\#8B4A30\]:hover   { background-color: #4338ca !important; }
+html.protanopia .hover\:text-\[\#733D26\]:hover { color: #4338ca !important; }
+
+html.protanopia .from-\[\#FDE8EC\]    { --tw-gradient-from: #e0e7ff !important; }
+html.protanopia .to-\[\#FFB6C1\]\/40  { --tw-gradient-to: rgba(165,180,252,0.4) !important; }
+
+html.protanopia .text-green-600       { color: #4338ca !important; }
+html.protanopia .text-red-500         { color: #6366f1 !important; }
+
+/* ─── DEUTERANOPIA (dificuldade com verde → paleta azul/ciano) ───────────────── */
+
+html.deuteranopia .bg-\[\#F8B0CB\]    { background-color: #bfdbfe !important; }
+html.deuteranopia .bg-\[\#FFB6C1\]    { background-color: #60a5fa !important; }
+html.deuteranopia .bg-\[\#FDE8EC\]    { background-color: #dbeafe !important; }
+html.deuteranopia .bg-\[\#733D26\]    { background-color: #1d4ed8 !important; }
+
+html.deuteranopia .text-\[\#733D26\]  { color: #1d4ed8 !important; }
+html.deuteranopia .text-\[\#FFB6C1\]  { color: #3b82f6 !important; }
+
+html.deuteranopia .border-\[\#FFB6C1\] { border-color: #93c5fd !important; }
+html.deuteranopia .border-pink-100     { border-color: #bfdbfe !important; }
+html.deuteranopia .border-pink-200     { border-color: #93c5fd !important; }
+
+html.deuteranopia .fill-\[\#FFB6C1\]  { fill: #93c5fd !important; }
+
+html.deuteranopia .hover\:bg-pink-50:hover        { background-color: #eff6ff !important; }
+html.deuteranopia .hover\:bg-\[\#FDE8EC\]:hover   { background-color: #dbeafe !important; }
+html.deuteranopia .hover\:bg-\[\#8B4A30\]:hover   { background-color: #1e40af !important; }
+html.deuteranopia .hover\:text-\[\#733D26\]:hover { color: #1e40af !important; }
+
+html.deuteranopia .from-\[\#FDE8EC\]   { --tw-gradient-from: #dbeafe !important; }
+html.deuteranopia .to-\[\#FFB6C1\]\/40 { --tw-gradient-to: rgba(147,197,253,0.4) !important; }
+
+html.deuteranopia .text-green-600      { color: #0e7490 !important; }
+html.deuteranopia .text-red-500        { color: #2563eb !important; }
+
+/* ─── TRITANOPIA (dificuldade com azul → paleta laranja/âmbar) ───────────────── */
+
+html.tritanopia .bg-\[\#F8B0CB\]      { background-color: #fed7aa !important; }
+html.tritanopia .bg-\[\#FFB6C1\]      { background-color: #fb923c !important; }
+html.tritanopia .bg-\[\#FDE8EC\]      { background-color: #fff7ed !important; }
+html.tritanopia .bg-\[\#733D26\]      { background-color: #9a3412 !important; }
+
+html.tritanopia .text-\[\#733D26\]    { color: #9a3412 !important; }
+html.tritanopia .text-\[\#FFB6C1\]    { color: #ea580c !important; }
+
+html.tritanopia .border-\[\#FFB6C1\]  { border-color: #fdba74 !important; }
+html.tritanopia .border-pink-100      { border-color: #fed7aa !important; }
+html.tritanopia .border-pink-200      { border-color: #fdba74 !important; }
+
+html.tritanopia .fill-\[\#FFB6C1\]    { fill: #fdba74 !important; }
+
+html.tritanopia .hover\:bg-pink-50:hover        { background-color: #fff7ed !important; }
+html.tritanopia .hover\:bg-\[\#FDE8EC\]:hover   { background-color: #fff7ed !important; }
+html.tritanopia .hover\:bg-\[\#8B4A30\]:hover   { background-color: #c2410c !important; }
+html.tritanopia .hover\:text-\[\#733D26\]:hover { color: #c2410c !important; }
+
+html.tritanopia .from-\[\#FDE8EC\]    { --tw-gradient-from: #fff7ed !important; }
+html.tritanopia .to-\[\#FFB6C1\]\/40  { --tw-gradient-to: rgba(251,146,60,0.4) !important; }
+
+html.tritanopia .text-green-600       { color: #b45309 !important; }
+html.tritanopia .text-red-500         { color: #dc2626 !important; }
+
+/* ─── COMBINED dark + colorblind modes ──────────────────────────────────────── */
+
+html.dark-mode.protanopia .bg-\[\#FDE8EC\]    { background-color: #1e1a40 !important; }
+html.dark-mode.protanopia .bg-\[\#FFB6C1\]    { background-color: #2e2860 !important; }
+html.dark-mode.protanopia .bg-\[\#F8B0CB\]    { background-color: #1e1520 !important; }
+html.dark-mode.protanopia .bg-\[\#733D26\]    { background-color: #2a2480 !important; }
+html.dark-mode.protanopia .text-\[\#733D26\]  { color: #a5b4fc !important; }
+html.dark-mode.protanopia .border-pink-100    { border-color: #2e2860 !important; }
+html.dark-mode.protanopia .border-\[\#FFB6C1\] { border-color: #2e2860 !important; }
+
+html.dark-mode.deuteranopia .bg-\[\#FDE8EC\]   { background-color: #1a2840 !important; }
+html.dark-mode.deuteranopia .bg-\[\#FFB6C1\]   { background-color: #1a3060 !important; }
+html.dark-mode.deuteranopia .bg-\[\#F8B0CB\]   { background-color: #1e1520 !important; }
+html.dark-mode.deuteranopia .bg-\[\#733D26\]   { background-color: #1a3a80 !important; }
+html.dark-mode.deuteranopia .text-\[\#733D26\] { color: #90c0ff !important; }
+html.dark-mode.deuteranopia .border-pink-100   { border-color: #1a3060 !important; }
+html.dark-mode.deuteranopia .border-\[\#FFB6C1\] { border-color: #1a3060 !important; }
+
+html.dark-mode.tritanopia .bg-\[\#FDE8EC\]    { background-color: #2e1a0a !important; }
+html.dark-mode.tritanopia .bg-\[\#FFB6C1\]    { background-color: #4a2010 !important; }
+html.dark-mode.tritanopia .bg-\[\#F8B0CB\]    { background-color: #1e1520 !important; }
+html.dark-mode.tritanopia .bg-\[\#733D26\]    { background-color: #7a2010 !important; }
+html.dark-mode.tritanopia .text-\[\#733D26\]  { color: #fdba74 !important; }
+html.dark-mode.tritanopia .border-pink-100    { border-color: #4a2010 !important; }
+html.dark-mode.tritanopia .border-\[\#FFB6C1\] { border-color: #4a2010 !important; }
+
+/* ─── SCROLLBAR ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar            { width: 6px; height: 6px; }
+::-webkit-scrollbar-track      { background: transparent; }
+::-webkit-scrollbar-thumb      { background: rgba(0,0,0,0.15); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover{ background: rgba(0,0,0,0.3); }
+
+html.dark-mode ::-webkit-scrollbar-thumb      { background: rgba(255,255,255,0.15); }
+html.dark-mode ::-webkit-scrollbar-thumb:hover{ background: rgba(255,255,255,0.3); }
